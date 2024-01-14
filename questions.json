@@ -1,121 +1,121 @@
 [
     {
       "_id": 0,
-      "question": "What is the best Name",
+      "question": "What is the best Frontend Framework",
       "answer": 0,
       "points": 1,
       "options": [
         {
           "option": 0,
-          "name": "Merrill"
+          "name": "React"
         },
         {
           "option": 1,
-          "name": "Ryan"
+          "name": "Angular"
         },
         {
           "option": 2,
-          "name": "Whitney"
+          "name": "Vue"
         },
         {
           "option": 3,
-          "name": "Betsy"
+          "name": "Svelte"
         }
       ]
     },
     {
       "_id": 1,
-      "question": "What is the best Name",
+      "question": "What is the best Backend Framework",
       "answer": 3,
       "points": 5,
       "options": [
         {
           "option": 0,
-          "name": "Frank"
+          "name": "SpringBoot"
         },
         {
           "option": 1,
-          "name": "Carlene"
+          "name": "Django"
         },
         {
           "option": 2,
-          "name": "Campos"
+          "name": "Flask"
         },
         {
           "option": 3,
-          "name": "Rebecca"
+          "name": "DOT NET"
         }
       ]
     },
     {
       "_id": 2,
-      "question": "What is the best Name",
+      "question": "What is the best Code Editor",
       "answer": 1,
       "points": 1,
       "options": [
         {
           "option": 0,
-          "name": "Juliana"
+          "name": "VSCode"
         },
         {
           "option": 1,
-          "name": "Pitts"
+          "name": "Sublime"
         },
         {
           "option": 2,
-          "name": "Everett"
+          "name": "IntellIJ"
         },
         {
           "option": 3,
-          "name": "Valentine"
+          "name": "Eclipse"
         }
       ]
     },
     {
       "_id": 3,
-      "question": "What is the best Name",
+      "question": "Who is the best professor",
       "answer": 1,
       "points": 1,
       "options": [
         {
           "option": 0,
-          "name": "Fowler"
+          "name": "Someone you know"
         },
         {
           "option": 1,
-          "name": "Cara"
+          "name": "Ashwin"
         },
         {
           "option": 2,
-          "name": "Veronica"
+          "name": "Someone you dont know"
         },
         {
           "option": 3,
-          "name": "Terri"
+          "name": "Wrong answer"
         }
       ]
     },
     {
       "_id": 4,
-      "question": "What is the best Name",
-      "answer": 1,
+      "question": "Who is the best developer",
+      "answer": 2,
       "points": 2,
       "options": [
         {
           "option": 0,
-          "name": "Boyd"
+          "name": "Option B"
         },
         {
           "option": 1,
-          "name": "Anita"
+          "name": "Akshat"
         },
         {
           "option": 2,
-          "name": "Hood"
+          "name": "Not this one"
         },
         {
           "option": 3,
-          "name": "Miranda"
+          "name": "Wrong one"
         }
       ]
     }
