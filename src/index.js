@@ -5,14 +5,23 @@ async function fetchQuestions(){
     return questions;
 }
 
-async function start(){
-    //remove button and replace with question div
-    document.getElementById("start").style.display = "none";
+function displayQuestion(question){
+    //cleanup
     const questionsDiv = document.getElementById('questions');
-    const QUESTIONS = await fetchQuestions();    
-    for( let question of QUESTIONS){
-        // console.log(question);
-        questionDivMaker(question);
+    // questionsDiv.innerHTML="";
+    //create block
+    const newBlock = document.createElement('div');
+    newBlock.setAttribute("id",`question${question._id}`)
+    newBlock.innerHTML = `<h3>${question.question}</h3><span>Points: ${question.points}</span><table><tr><td>${question.options[0]}</td></tr><tr><td>${question.options[1]}</td></tr><tr><td>${question.options[2]}</td></tr><tr><td>${question.options[3]}</td></tr></table>`;
+    questionsDiv.appendChild(newBlock);
+}
+async function start(){
+    //hide start button 
+    document.getElementById("start").style.display = "none";
+    //get questions
+    const QUESTIONS = await fetchQuestions();  
+    for(question of QUESTIONS){
+        displayQuestion(question);
     }
 
     //on next click, change question div
