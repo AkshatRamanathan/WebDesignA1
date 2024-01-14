@@ -12,4 +12,3 @@ Topic: Quiz Application
 - CSS
 - JS
 - LiveServer (basic web server)
-- 
