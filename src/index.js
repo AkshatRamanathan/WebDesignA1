@@ -1,5 +1,5 @@
 async function fetchQuestions() {
-    const response = await fetch('/questions.json');
+    const response = await fetch('questions.json', { method: 'GET' });
     const questions = await response.json();
     // console.log(questions);
     return questions;
