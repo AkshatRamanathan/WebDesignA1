@@ -5,10 +5,19 @@ body {
     margin: auto;
 }
 
-div {
+button{
+    padding: 6px;
+    margin: 3px;
+}
+
+section, div {
     padding: 15px;
     border: solid 1px black;
     margin: 5px;
+}
+
+td{
+    display: table;
 }
 
 table {
