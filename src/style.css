@@ -1,0 +1,25 @@
+body {
+    background-color: antiquewhite;
+    max-width: 700px;
+    text-align: center;
+    margin: auto;
+}
+
+button{
+    padding: 6px;
+    margin: 3px;
+}
+
+section, div {
+    padding: 15px;
+    border: solid 1px black;
+    margin: 5px;
+}
+
+td{
+    display: table;
+}
+
+table {
+    border: solid 1px black;
+}
