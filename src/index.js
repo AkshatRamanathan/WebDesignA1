@@ -21,10 +21,7 @@ function renderNextButton(nextIndex) {
     nextButton.addEventListener('click', (e) => displayQuestion(nextIndex));
     if (nextIndex == QUESTIONS.length) {
         nextButton.style.display = "none";
-        // TODO
-        //create submit button and call printScore inside button
         renderSubmitButton();
-        // printScore();
     }
     questionsDiv.appendChild(nextButton);
 }
@@ -92,16 +89,17 @@ function startTimer() {
     timex = setTimeout(() => {
         seconds++;
         if (seconds > 59) {
-            seconds = 0; mins++;
-            if (mins < 10) {
-                document.getElementById("mins").textContent = ('0' + mins + ':');
+            seconds = 0; 
+            minutes++;
+            if (minutes < 10) {
+                document.getElementById("mins").textContent = `0${minutes} :`;
             }
-            else document.getElementById("mins").textContent = (mins + ':');
+            else document.getElementById("mins").textContent = `${minutes} :`;
         }
         if (seconds < 10) {
             document.getElementById("seconds").textContent = `0${seconds}`;
         } else {
-            document.getElementById("seconds").textContent = seconds.toString();
+            document.getElementById("seconds").textContent = `${seconds}`;
         }
 
         startTimer();
