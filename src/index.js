@@ -4,7 +4,7 @@ async function fetchQuestions() {
     return questions;
 }
 
-function renderSubmitButton(){
+function renderSubmitButton() {
     const questionsDiv = document.getElementById('questions');
     const submitButton = document.createElement('button');
     submitButton.textContent = "SUBMIT";
@@ -13,12 +13,26 @@ function renderSubmitButton(){
     questionsDiv.appendChild(submitButton);
 }
 
+function nextAction(nextIndex) {
+    if (nextIndex == -1) {
+        //last question
+
+    }
+    else {
+        let x = document.querySelector(`input[name="options${nextIndex - 1}"]:checked`).value;
+        if (QUESTIONS[nextIndex - 1].answer == x) {
+            SCORE += QUESTIONS[nextIndex - 1].points;
+        }
+        displayQuestion(nextIndex);
+    }
+}
+
 function renderNextButton(nextIndex) {
     const questionsDiv = document.getElementById('questions');
     const nextButton = document.createElement('button');
     nextButton.textContent = "NEXT";
     nextButton.setAttribute("id", "nextButton");
-    nextButton.addEventListener('click', (e) => displayQuestion(nextIndex));
+    nextButton.addEventListener('click', (e) => nextAction(nextIndex));
     if (nextIndex == QUESTIONS.length) {
         nextButton.style.display = "none";
         renderSubmitButton();
@@ -40,10 +54,16 @@ function renderPreviousButton(prevIndex) {
 
 function printScore() {
     clearTimeout(timex);
+    // nextAction(-1);
+    let x = document.querySelector(`input[name="options4"]:checked`).value;
+    console.log(x)
+    if (QUESTIONS[4].answer == x) {
+        SCORE += QUESTIONS[4].points;
+    }
     const questionsDiv = document.getElementById('questions');
     questionsDiv.innerHTML = ""; //cleanup
     questionsDiv.textContent = `SCORE: ${SCORE}/10`;
-    
+
     renderRestartButton();
 }
 
@@ -57,6 +77,7 @@ function renderRestartButton() {
 }
 
 function displayQuestion(index) {
+
     const questionsDiv = document.getElementById('questions');
     questionsDiv.innerHTML = ""; //cleanup
 
@@ -64,11 +85,12 @@ function displayQuestion(index) {
     //create block
     const newBlock = document.createElement('div');
     newBlock.setAttribute("id", `question${index}`)
-    newBlock.innerHTML = `<h3>${question.question}</h3><span>Points: ${question.points}</span><table><tr><td><input type="radio" id="${question._id}" name="options${question._id}" value="${question.options[0].name}">${question.options[0].name}</td></tr><tr><td><input type="radio" id="${question._id}" name="options${question._id}" value="${question.options[1].name}">${question.options[1].name}</td></tr><tr><td><input type="radio" id="${question._id}" name="options${question._id}" value="${question.options[2].name}">${question.options[2].name}</td></tr><tr><td><input type="radio" id="${question._id}" name="options${question._id}" value="${question.options[3].name}">${question.options[3].name}</td></tr></table>`;
+    newBlock.innerHTML = `<h3>${question.question}</h3><span>Points: ${question.points}</span><table><tr><td><input type="radio" id="${question._id}" name="options${question._id}" value="${question.options[0].option}">${question.options[0].name}</td></tr><tr><td><input type="radio" id="${question._id}" name="options${question._id}" value="${question.options[1].option}">${question.options[1].name}</td></tr><tr><td><input type="radio" id="${question._id}" name="options${question._id}" value="${question.options[2].option}">${question.options[2].name}</td></tr><tr><td><input type="radio" id="${question._id}" name="options${question._id}" value="${question.options[3].option}">${question.options[3].name}</td></tr></table>`;
     questionsDiv.appendChild(newBlock);
     renderPreviousButton(index - 1);
     renderNextButton(index + 1);
     renderRestartButton();
+
 
 }
 
@@ -89,7 +111,7 @@ function startTimer() {
     timex = setTimeout(() => {
         seconds++;
         if (seconds > 59) {
-            seconds = 0; 
+            seconds = 0;
             minutes++;
             if (minutes < 10) {
                 document.getElementById("mins").textContent = `0${minutes} :`;

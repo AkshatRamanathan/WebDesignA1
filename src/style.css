@@ -5,6 +5,10 @@ body {
     margin: auto;
 }
 
+p{
+    display: table;
+}
+
 button{
     padding: 6px;
     margin: 3px;
